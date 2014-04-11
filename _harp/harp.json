@@ -1,0 +1,13 @@
+{
+  "domains": [""],
+  "globals": {
+    "site_title": "My Harp Blog",
+    "site_owner": "",
+    "site_tagline": "",
+    "twitter": "@HarpPlatform",
+    "site_url": "",
+    "analytics": "",
+    "analytics_site": "",
+    "mailchimp_post_url": ""
+  }
+}

@@ -1,0 +1,56 @@
+!!!
+html(lang="en")
+  head
+    meta(charset='utf-8')
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    title #{ site_title }
+    link(href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:300,600", rel="stylesheet", type="text/css")
+    link(rel="stylesheet", href="assets/css/app.css")
+    script.
+       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)})(window,document,'script','//www.google-analytics.com/analytics.js','ga');ga('create', '#{ analytics }', '#{ analytics_site }');ga('send', 'pageview');
+
+  body(class="page-#{ current.path[0] } #{ current.path.join('-') }",  data-spy="scroll", data-target=".navbar-grouper")
+    nav.primary-nav(data-spy="affix" data-offset-top="10")
+      .container
+        .navbar-header
+        button.navbar-toggle(type="button", data-toggle="collapse", data-target="#main-nav")
+          span.sr-only Toggle navigation
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        #main-nav.collapse.navbar-collapse
+          ul.nav.navbar-nav.visible-xs
+            li
+              a(href="#home") Home
+            li
+              a(href="#about") About
+            li
+              a(href="#pricing") Pricing
+            li
+              a(href="#contact") Contact Us
+        .row
+          .col-sm-8.col-sm-offset-2
+              ul.nav.nav-justified.hidden-xs
+                li
+                  a(href="#home") Home
+                li
+                  a(href="#about") About
+                li
+                  a(href="#pricing") Pricing
+                li
+                  a(href="#contact") Contact Us
+
+    != yield
+
+    footer.mainfooter
+      .container
+        .row
+          .col-sm-6
+            p #{ site_tagline }
+          .col-sm-6
+            p.pull-right &copy; 2014 #{ site_owner }
+
+
+    script(src='//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js').
+    script(src="/assets/js/bootstrap.min.js")
+    script(src="/assets/js/app.js")

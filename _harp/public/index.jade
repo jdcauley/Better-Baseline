@@ -1,0 +1,53 @@
+header.header
+  .container
+    .hero
+      != partial("_partials/header")
+      .form-success
+        :markdown
+          #### Thanks for Signing Up!
+          We're working hard and we'll be in touch soon.
+      .form-fail
+      .form-wrap
+        h4 Sign up for a Beta invitation
+        form#email-signup.form-inline(action="#{ mailchimp_post_url }", method="post", name="mc-embedded-subscribe-form" novalidate)
+          div(style="position: absolute; left: -5000px;")
+            input(type="text", name="b_8681300fc3ff9664032623d1c_a4e14b8825", value="")
+          .input-group
+            input#mce-EMAIL.required.email.form-control(type="email", value="", name="EMAIL")
+            span.input-group-btn
+              input#mc-embedded-subscribe.btn.btn-default(type="submit", value="Sign Up", name="subscribe")
+
+section#about.about
+  .container
+    .row
+      .col-lg-12
+        != partial("_partials/about")
+
+    .row
+      .col-lg-12
+
+section#pricing.pricing
+  .container
+    .row
+      .col-lg-12
+        .center
+          :markdown
+            ## Pricing
+            ### Completely free during Beta, then:
+
+    .row
+      .col-sm-3.col-sm-offset-3
+        .price-box
+          .pricing-header
+            h3 Free Forever
+          ul.list-group
+            li 3 Groups
+            li Unlimited Sends
+
+      .col-sm-3
+        .price-box
+          .pricing-header
+            h3  $3/mo.
+          ul.list-group
+            li Unlimited Groups
+            li Unlmited Sends
